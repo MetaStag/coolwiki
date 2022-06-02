@@ -1,7 +1,3 @@
-// https://glitch.com/edit/#!/wikipedia-search-starter?path=client.js%3A36%3A32
-// https://www.geeksforgeeks.org/working-with-apis-in-javascript/
-// https://en.wikipedia.org/wiki/Special:ApiSandbox#action=parse&format=json&page=Perseus
-
 function page(title) {
     document.getElementById('results').style.display = 'none';
     const request = `https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&page=${title}`;
@@ -21,6 +17,7 @@ function displaySearch(data) {
         title = title.replace(' ', '_')
         display += `<h3><a onclick=page('${title}')>${title}</a></h3>`;
         display += `<p>${data.query.search[i].snippet}</p>`;
+        display += `<hr>`;
     }
     document.getElementById('results').style.display = 'block';
     document.getElementById('results').innerHTML = display;
@@ -28,9 +25,14 @@ function displaySearch(data) {
 }
 
 function displayPage(data) {
+    let display = '';
+    let text = data.parse.text['*'];
+    text = text.replaceAll('href="', 'href="https://en.wikipedia.org');
+    text = text.replaceAll('src="', 'src="https:');
     document.getElementById('page').style.display = 'block';
-    document.getElementById("page").innerHTML = `<h1>${data.parse.title}</h1>`;
-    document.getElementById("page").innerHTML = `<p>${data.parse.text['*']}</p>`;
+    display += `<h1>${data.parse.title}</h1>`;
+    display += text;
+    document.getElementById("page").innerHTML = display;
 }
 
 
