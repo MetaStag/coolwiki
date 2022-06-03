@@ -19,14 +19,13 @@ function displaySearch(data) {
     let display = '';
     for (let i = 0; i < 10; i++){
         let title = data.query.search[i].title;
-        title = title.replace(' ', '_')
-        display += `<h3><a onclick=page('${title}')>${title}</a></h3>`;
+        title = title.replaceAll(' ', '_');
+        display += `<h3><a onclick=page("${title}")>${title}</a></h3>`;
         display += `<p>${data.query.search[i].snippet}</p>`;
         display += `<hr>`;
     }
     document.getElementById('results').style.display = 'block';
     document.getElementById('results').innerHTML = display;
-
 }
 
 // display wikipedia page
@@ -41,10 +40,17 @@ function displayPage(data) {
     document.getElementById("page").innerHTML = display;
 }
 
+// click on the 'coolwiki' heading to clear screen
+function refresh() {
+    document.getElementById('page').style.display = 'none';
+    document.getElementById('results').style.display = 'none';
+    document.getElementById('search').value = '';
+}
+
 // Enter key event for search box
 window.onload = function() {
-    document.getElementById('search').addEventListener("keypress", function(event) {
-        if (event.key === "Enter") {
+    document.getElementById('search').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
             event.preventDefault();
             search(document.getElementById('search').value);
     }
