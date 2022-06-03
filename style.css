@@ -1,5 +1,10 @@
+/* styling of website */
+
+
+/* import Montserrat font */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+/* define colors here */
 :root {
     --bg: #EEE2DC;
     --nav-bg: #EDC7B7;
