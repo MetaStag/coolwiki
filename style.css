@@ -1,94 +1,104 @@
 /* styling of website */
 
-
 /* import Montserrat font */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 /* define colors here */
 :root {
-    --bg: #EEE2DC;
-    --nav-bg: #EDC7B7;
-    --p-color: #B6547B;
-    --h-color: #AC3B61;
-    --h3-color: #123C69;
-    --hr-color: #BAB2B5;
-    --border: #888385;
-    --a-color: #274463;
-    --table-color: #dde8e9;
+  --bg: #eee2dc;
+  --nav-bg: #edc7b7;
+  --p-color: #b6547b;
+  --h-color: #ac3b61;
+  --h3-color: #123c69;
+  --hr-color: #bab2b5;
+  --border: #888385;
+  --a-color: #274463;
+  --table-color: #dde8e9;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--p-color);
-    background-color: var(--bg);
+  font-family: "Montserrat", sans-serif;
+  color: var(--p-color);
+  background-color: var(--bg);
+  margin: 0;
+  height: calc(100vh - 71px);
+  width: 100%;
 }
 
 #navbar {
-    padding: 13px;
-    background-color: var(--nav-bg);   
-    overflow: hidden;
-    clear: both;
+  padding: 13px;
+  background-color: var(--nav-bg);
+  overflow: hidden;
+  clear: both;
 }
 
 #search {
-    width: 180px;
-    padding: 13px 20px 13px 40px;
-    background-image: url('http://assets.stickpng.com/images/585e4ad1cb11b227491c3391.png');
-    background-size: 20px;
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    background-color: var(--bg);
-    border: 2px solid var(--hr-color);
-    border-radius: 6px;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    float: right;
-    outline: none;
+  width: 180px;
+  padding: 13px 20px 13px 40px;
+  background-image: url("http://assets.stickpng.com/images/585e4ad1cb11b227491c3391.png");
+  background-size: 20px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-color: var(--bg);
+  border: 2px solid var(--hr-color);
+  border-radius: 3px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  float: right;
+  outline: none;
 }
 
 #search:focus {
-    border: 2px solid var(--h-color);
+  border: 2px solid var(--h-color);
+}
+
+.results-parent {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #results {
-    display: none;
-    width: 50%;
-    margin: auto;
-    height: 500px;
-    overflow-y: scroll;
-    padding: 12px;
-    border: 3px solid var(--border);
+  display: none;
+  width: 50%;
+  height: 500px;
+  overflow-y: scroll;
+  padding: 12px;
+  border: 3px solid var(--border);
 }
 
 #page {
-    display: none;
-    width: 90%;
-    margin: auto;
+  display: none;
+  width: 90%;
+  margin: auto;
 }
 
 h1 {
-    color: var(--h-color);
+  color: var(--h-color);
 }
 
 h2 {
-    display: inline;
-    font-size: 1.7em;
-    color: var(--h-color);
+  display: inline;
+  font-size: 1.7em;
+  color: var(--h-color);
 }
 
 h3 {
-    color: var(--h3-color);
+  color: var(--h3-color);
 }
 
 hr {
-    width: 50%;
-    color: var(--hr-color);
+  width: 50%;
+  color: var(--hr-color);
 }
 
 a {
-    color: var(--a-color);
+  color: var(--a-color);
 }
 
 table {
-    background-color: var(--table-color) !important;
+  background-color: var(--table-color) !important;
 }

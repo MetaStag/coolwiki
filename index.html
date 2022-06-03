@@ -1,18 +1,25 @@
 <!-- basic structure of page-->
 <!DOCTYPE html>
 <head>
-    <title>coolwiki</title>
-    <link rel='stylesheet' href='style.css'>
-    <script src='client.js'></script>
+  <title>coolwiki</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="client.js"></script>
 </head>
 <body>
+  <div id="navbar">
+    <h2 onclick="refresh()">coolwiki</h2>
+    <input
+      type="text"
+      id="search"
+      autofocus="autofocus"
+      placeholder="eg. Andromeda, Cat"
+    />
+  </div>
 
-<div id='navbar'>
-    <h2 onclick='refresh()'>coolwiki</h2>
-    <input type='text' id='search' autofocus='autofocus' placeholder='eg. Andromeda, Cat'>
-</div>
-
-<div id='results'></div> <!-- to display search results -->
-<div id='page'></div> <!-- to display a wikipedia page-->
-
+  <div class="results-parent">
+    <div id="results"></div>
+    <!-- to display search results -->
+  </div>
+  <div id="page"></div>
+  <!-- to display a wikipedia page-->
 </body>
